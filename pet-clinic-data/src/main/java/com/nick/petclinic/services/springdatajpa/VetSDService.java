@@ -3,6 +3,7 @@ package com.nick.petclinic.services.springdatajpa;
 import com.nick.petclinic.model.Vet;
 import com.nick.petclinic.repositories.VetRepository;
 import com.nick.petclinic.services.VetService;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import java.util.HashSet;
@@ -10,6 +11,7 @@ import java.util.Set;
 
 
 @Service
+@Profile("springdatajpa")
 public class VetSDService implements VetService {
 
     private final VetRepository vetRepository;
