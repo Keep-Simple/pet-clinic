@@ -18,8 +18,8 @@ public abstract class AbstractServiceMap<T extends BaseEntity, ID extends Long> 
 
     T save(T object) {
 
-        if(object != null){
-            if(object.getId() == null) {
+        if (object != null) {
+            if (object.getId() == null) {
                 object.setId(getNextId());
             }
             map.put(object.getId(), object);
@@ -39,7 +39,7 @@ public abstract class AbstractServiceMap<T extends BaseEntity, ID extends Long> 
     }
 
     private Long getNextId() {
-        if(map.isEmpty()) {
+        if (map.isEmpty()) {
             return 1L;
         }
         return Collections.max(map.keySet()) + 1;
